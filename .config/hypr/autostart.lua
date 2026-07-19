@@ -1,0 +1,7 @@
+hl.on("hyprland.start", function()
+  hl.exec_cmd("clipse -listen")
+  hl.exec_cmd("systemctl start --user hyprpolkitagent")
+  hl.exec_cmd("hyprpaper")
+  hl.exec_cmd("swaync")
+  hl.exec_cmd("hyprpaper")
+end)

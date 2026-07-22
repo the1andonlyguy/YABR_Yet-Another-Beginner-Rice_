@@ -70,10 +70,10 @@ hl.config({
 		gaps_in = 3,
 		gaps_out = 8,
 
-		border_size = 2,
+		border_size = 1,
 
 		col = {
-			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
+			active_border = { colors = { "rgba(aadd99ee)" }, angle = 45 },
 			inactive_border = "rgba(595959aa)",
 		},
 
@@ -87,12 +87,12 @@ hl.config({
 	},
 
 	decoration = {
-		rounding = 10,
+		rounding = 3,
 		rounding_power = 2,
 
 		-- Change transparency of focused and unfocused windows
-		active_opacity = 1.0,
-		inactive_opacity = 1.0,
+		active_opacity = 0.96,
+		inactive_opacity = 0.93,
 
 		shadow = {
 			enabled = true,
@@ -103,9 +103,11 @@ hl.config({
 
 		blur = {
 			enabled = true,
-			size = 3,
-			passes = 1,
+			size = 5,
+			xray = true,
+			passes = 3,
 			vibrancy = 0.1696,
+			noise = 0.024,
 		},
 	},
 
@@ -187,8 +189,8 @@ hl.config({
 
 hl.config({
 	misc = {
-		force_default_wallpaper = -1, -- Set to 0 or 1 to disable the anime mascot wallpapers
-		disable_hyprland_logo = false, -- If true disables the random hyprland logo / anime girl background. :(
+		force_default_wallpaper = 1, -- Set to 0 or 1 to disable the anime mascot wallpapers
+		disable_hyprland_logo = true, -- If true disables the random hyprland logo / anime girl background. :(
 	},
 })
 
@@ -203,6 +205,7 @@ hl.config({
 		kb_model = "",
 		kb_options = "",
 		kb_rules = "",
+		force_no_accel = true,
 
 		follow_mouse = 1,
 
@@ -279,4 +282,4 @@ hl.window_rule({
 })
 
 -- HyprMod managed settings
-require("hyprland-gui")
+-- require("hyprland-gui")

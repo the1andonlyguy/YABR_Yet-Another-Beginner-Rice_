@@ -33,6 +33,7 @@ hl.bind(
 	hl.dsp.exec_cmd("kitty --class clipse -e clipse", { float = true, size = { 552, 600 }, stay_focused = true })
 )
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("waypaper & disown"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region"))
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
@@ -40,6 +41,7 @@ hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 hl.bind("SUPER + PERIOD", hl.dsp.exec_cmd(emoji))
 hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("systemctl suspend"))
+hl.bind(mainMod .. " + GRAVE", hl.dsp.exec_cmd("hyprshutdown & disown"))
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
@@ -49,8 +51,8 @@ for i = 1, 10 do
 end
 
 -- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+-- hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
+-- hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))

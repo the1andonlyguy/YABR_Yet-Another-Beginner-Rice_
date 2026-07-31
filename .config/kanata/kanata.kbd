@@ -1,0 +1,45 @@
+(defcfg
+    process-unmapped-keys yes
+    log-layer-changes yes
+)
+(defsrc
+    esc f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 home end del
+    grv                     - = bks
+    tab q w e r t y u i o p [ ] \
+    caps a s d f g h j k l ; ' ent
+    lsft kp8 z x c v b n m , . / ins rshift
+    ctl lmet lalt menu spc ralt rctl lft up right pgup
+                                        down pgdn
+)
+
+(deflayer Colemak-DH
+    _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+    _                     _ _ _
+    _ q w f p b j l u y o [ ] _
+    @cap a r s t g m n e i _ _ _
+    _ _ x c d v z k h _ _ _ @tDH _
+    _ _ _ _ _ _ _ _ _ _ _
+                      _ lrld
+)
+
+(deflayer QWERTY
+    _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+    _                     _ _ _
+    _ q w e r t y u i o p _ _ _
+    @cap a s d f g h j k l ; _ _
+    _ _ z x c v b n m _ _ _ @tDH _
+    _ _ _ _ _ _ _ _ _ _ _
+                      _ lrld
+
+)
+
+(defvar
+  tap-time 200
+  hold-time 250
+)
+
+(defalias
+ cap (tap-hold-press $tap-time $hold-time esc lctl)
+ tDH (tap-hold-press $tap-time $hold-time (layer-switch QWERTY) (layer-switch Colemak-DH))
+)
+

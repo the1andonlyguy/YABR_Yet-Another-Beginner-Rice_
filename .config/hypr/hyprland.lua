@@ -23,7 +23,7 @@ hl.monitor({
 	output = "HDMI-A-1",
 	mode = "1920x1080@99.73",
 	position = "0x0",
-	scale = "1",
+	scale = "1.0",
 })
 
 -------------------
@@ -63,7 +63,6 @@ hl.env("HYPRCURSOR_SIZE", "24")
 -----------------------
 ---- LOOK AND FEEL ----
 -----------------------
-
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
 	general = {
@@ -83,7 +82,7 @@ hl.config({
 		-- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
 		allow_tearing = false,
 
-		layout = "dwindle",
+		layout = "master",
 	},
 
 	decoration = {

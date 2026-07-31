@@ -5,7 +5,7 @@
 -- Set programs that you use
 terminal = "kitty"
 fileManager = "files"
-menu = "rofi -show drun &"
+menu = "qs -c noctalia-shell ipc call launcher toggle"
 emoji = "rofimoji --action type --typer wtype & disown"
 browser = "zen-browser &"
 
@@ -16,7 +16,7 @@ browser = "zen-browser &"
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
-local closeWindowBind = hl.bind("ALT + F4", hl.dsp.window.close())
+local closeWindowBind = hl.bind("SUPER + F4", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind(
 	mainMod .. " + M",
@@ -24,16 +24,20 @@ hl.bind(
 )
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind("ALT + SPACE", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind(
 	"SUPER + V",
-	hl.dsp.exec_cmd("kitty --class clipse -e clipse", { float = true, size = { 552, 600 }, stay_focused = true })
+	hl.dsp.exec_cmd(
+		"~/.config/niri/shell-scripts/toggle_clipse.sh",
+		{ float = true, size = { 552, 600 }, stay_focused = true }
+	)
 )
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("waypaper & disown"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region"))
+hl.bind(mainMod .. " + F1", hl.dsp.exec_cmd("qs -c 'noctalia-shell' ipc call plugin:keybind-cheatsheet toggle"))
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))

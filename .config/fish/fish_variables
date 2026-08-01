@@ -42,3 +42,4 @@ SETUVAR fish_pager_color_selected_background:\x2d\x2dbackground\x3d4c3743\x1e\x2
 SETUVAR fish_pager_color_selected_completion:d3c6aa\x1e\x2d\x2dtheme\x3deverforest\x2dhard
 SETUVAR fish_pager_color_selected_description:859289\x1e\x2d\x2dtheme\x3deverforest\x2dhard
 SETUVAR fish_pager_color_selected_prefix:d699b6\x1e\x2d\x2dtheme\x3deverforest\x2dhard
+SETUVAR --export fish_user_paths:/home/haki_cat/\x2econfig/niri/shell\x2dscripts\x1e/home/haki_cat/\x2espicetify\x1e/home/haki_cat/\x2elocal/bin

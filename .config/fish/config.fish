@@ -4,3 +4,5 @@ function fish_greeting
     fish_config theme choose everforest-hard
     fastfetch
 end
+
+fish_add_path /home/haki_cat/.spicetify
